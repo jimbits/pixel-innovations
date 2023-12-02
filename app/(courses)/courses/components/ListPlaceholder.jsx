@@ -1,7 +1,8 @@
 const items = [
-    { id: "Python data analyst" },
+    { id: "python data analyst" },
     { id: "ui/ux developer" },
-    { id: "Ruby on rails developer" },
+    { id: "ruby on rails developer" },
+    { id: "react front end dev" },
   
  
   ]
@@ -10,7 +11,7 @@ function ListPlaceHolder() {
     return (
       <ul role="list" className="">
         {items.map((item) => (
-         <li className="py-4 w-[300px] ">
+         <li key={item.id} className="py-4 w-[300px] ">
                
            <div className="relative h-16 overflow-hidden rounded border border-dashed border-gray-400 opacity-75">
              <svg className="absolute inset-0 h-full w-full stroke-gray-900/10" fill="none">

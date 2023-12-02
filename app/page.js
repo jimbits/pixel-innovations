@@ -1,15 +1,29 @@
- 
- 
+import Link from "next/link";
 
+import { Hero } from "@/components/hero/Hero";
+import { SuccessSection } from "@/components/sections/SuccessSection";
+import { CarrerSection } from "@/components/sections/CarrerSection";
+import { QuestionSection } from "@/components/sections/QuestionSection";
 
-import { Hero } from '@/components/hero/Hero'
-export default function Home() {
+const getPrices = async () => {
+  const res = await fetch("http:localhost:3000/api/prices", {
+    method: "POST",
+  });
+  const prices = await res.json();
+  console.log(prices);
+  return null;
+};
+export default async function Home() {
+  const priceList = await getPrices();
+  console.log(priceList);
   return (
-  <>
- 
-  <Hero/>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     
-     </main></>
-  )
+    <>
+      <Hero />
+      <main className="">
+        <CarrerSection />
+        <SuccessSection />
+        <QuestionSection />
+      </main>
+    </>
+  );
 }

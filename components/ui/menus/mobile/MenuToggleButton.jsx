@@ -1,5 +1,5 @@
-"use client"
-import {MenuIcon} from '@/components/icons/MobileMenu'
+"use client";
+import { MenuIcon } from "@/components/icons/MobileMenu";
 
 function MenuToggleButton({ children }) {
   return (
@@ -7,11 +7,9 @@ function MenuToggleButton({ children }) {
       <button
         type="button"
         className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-        onClick={()=>{
-          console.log("I actually didn't know this worked")
-        }}
+        onClick={() => {}}
       >
-        <MenuIcon/>
+        <MenuIcon />
         <span className="sr-only">Open main menu</span>
       </button>
     </div>
