@@ -6,24 +6,24 @@ import { CarrerSection } from "@/components/sections/CarrerSection";
 import { QuestionSection } from "@/components/sections/QuestionSection";
 
 const getPrices = async () => {
-  const res = await fetch("http:localhost:3000/api/prices", {
-    method: "POST",
-  });
-  const prices = await res.json();
-  console.log(prices);
-  return null;
+	const res = await fetch("http:localhost:3000/api/prices", {
+		method: "POST",
+	});
+	const prices = await res.json();
+
+	return null;
 };
 export default async function Home() {
-  const priceList = await getPrices();
-  console.log(priceList);
-  return (
-    <>
-      <Hero />
-      <main className="">
-        <CarrerSection />
-        <SuccessSection />
-        <QuestionSection />
-      </main>
-    </>
-  );
+	const priceList = await getPrices();
+
+	return (
+		<>
+			<Hero />
+			<main className="">
+				<CarrerSection />
+				<SuccessSection />
+				<QuestionSection />
+			</main>
+		</>
+	);
 }
